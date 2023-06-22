@@ -1,0 +1,242 @@
+@import "normalize";
+@import "vars";
+@import "mixins";
+@import "extends";
+
+* {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+}
+
+html,
+body {
+   min-height: 100vh;
+   font-family: $font_family;
+   font-weight: $font_weight;
+   font-size: $font_size;
+   color: $color_main;
+   background: $background_main;
+}
+
+.header-row,
+.first-screen,
+section,
+.footer {
+   padding: 0 calc(50vw - $adaptive_width_content);
+   @media screen and (max-width: 1200px) {
+      padding: 0 calc(50vw - calc($adaptive_width_content - 12%));
+   }
+
+   @media screen and (max-width: 992px) {
+      padding: 0 calc(50vw - calc($adaptive_width_content - 26.5%));
+   }
+
+   @media screen and (max-width: 768px) {
+      padding: 0 15px;
+   }
+}
+
+.header {
+   padding: 24px 0;
+   position: absolute;
+   top: 30px;
+   width: 100%;
+   background: linear-gradient(
+         360deg,
+         rgba(255, 255, 255, 0.5) 0%,
+         rgba(255, 255, 255, 0.244636) 24.1%,
+         rgba(255, 255, 255, 0) 47.19%
+      ),
+      rgba(255, 255, 255, 0.02);
+   -webkit-backdrop-filter: blur(4.5px);
+   backdrop-filter: blur(4.5px);
+}
+
+.header-row {
+   @include flex(space-between, center);
+}
+.menu {
+   @include flex(space-between, center, 2vw);
+   &__item {
+      position: relative;
+      display: block;
+      &:hover::after {
+         content: "";
+         position: absolute;
+         width: 55px;
+         height: 3px;
+         background: $color_coral;
+         left: 50%;
+         transform: translateX(-50%);
+         top: 28px;
+         opacity: 0.3;
+      }
+   }
+
+   &__link {
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: 0.08em;
+      color: $color_main;
+   }
+}
+
+.first-screen {
+   // height: 100vh;
+   background: url("../assets/img/bcg.png") center center/cover no-repeat;
+   background-size: 100% 100%;
+   padding-top: 260px;
+   padding-bottom: 431px;
+   &__content {
+      max-width: 523px;
+   }
+}
+
+.content {
+   &__title {
+      font-family: "Playfair Display";
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: $color_main;
+      margin-bottom: 20px;
+      &_italic-green {
+         color: $color_green;
+         font-style: italic;
+      }
+      &_benefits {
+         width: 500px;
+      }
+   }
+   &__btn {
+      margin-top: 50px;
+   }
+   &__text {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 1.4;
+      color: $color_main;
+      opacity: 0.8;
+
+      &_first {
+         max-width: 300px;
+      }
+      &_info {
+         // width: 28vw;
+         width: 400px;
+         padding-right: 10px;
+         @media screen and (max-width: 1200px) {
+            width: 28vw;
+         }
+         @media screen and (max-width: 1200px) {
+            width: 305px;
+         }
+      }
+      &_benefits {
+         width: 500px;
+      }
+   }
+}
+.btn {
+   @extend %btn;
+   &__text {
+      position: relative;
+      @media screen and (max-width: 992px) {
+         font-size: 30px;
+      }
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: 46%;
+         left: 8%;
+         width: 100%;
+         height: 13px;
+         background: $color_coral;
+         opacity: 0.3;
+      }
+   }
+}
+
+.section {
+   margin-bottom: 120px;
+   &:last-of-type {
+      margin-bottom: 100px;
+   }
+}
+
+.info {
+   @include flex(space-between, center);
+   // position: relative;
+   margin-top: -281px;
+   background: linear-gradient(
+      183.11deg,
+      rgba(255, 255, 255, 0) 46.73%,
+      #ffffff 63.21%
+   );
+}
+
+.info-wrap {
+   @include flex(space-between, flex-start);
+   // position: absolute;
+   // left: 35%;
+   padding: 45px 0;
+   margin-left: -170px;
+   background: $background_main;
+   opacity: 0.9;
+   @media screen and (max-width: 1200px) {
+      margin-left: calc(81vw - 570px - 770px);
+      padding: 3vw 0;
+   }
+}
+
+.list {
+   // width: 26vw;
+   width: 370px;
+   @media screen and (max-width: 1200px) {
+      width: 26vw;
+   }
+   @media screen and (max-width: 992px) {
+      width: 275px;
+   }
+   &__number {
+      font-family: "Playfair Display";
+      font-size: 68px;
+      line-height: 1.1;
+      text-align: center;
+      color: $color_main;
+      margin-bottom: 12px;
+      &_grey {
+         font-size: 40px;
+         line-height: 1.3;
+         color: #e4e4e4;
+      }
+   }
+
+   &__descr {
+      position: relative;
+      text-align: center;
+      &:not(:last-of-type) {
+         margin-bottom: 80px;
+      }
+      &:not(:last-of-type)::after {
+         content: "";
+         position: absolute;
+         width: 100px;
+         height: 2px;
+         background: $color_green;
+         left: 50%;
+         transform: translateX(-50%);
+         top: calc(100% + 45px);
+      }
+   }
+}
+
+.benefits {
+   @include flex(space-between, flex-start, 30px);
+   flex-wrap: wrap;
+   &__content {
+      padding: 20px 30px;
+   }
+}
