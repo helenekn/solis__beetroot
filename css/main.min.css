@@ -641,14 +641,13 @@ body {
 
 .video {
   margin: 0 100px;
-  padding: 30px 0;
-  padding-left: 2vw;
-  padding-right: 5vw;
-  border-radius: 32px;
-  border: 1px solid #e4e4e4;
 }
 
 .player {
+  padding: 30px;
+  padding-right: 70px;
+  border-radius: 32px;
+  border: 1px solid #e4e4e4;
   position: relative;
   margin-bottom: 50px;
 }
@@ -704,7 +703,7 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  left: -2%;
+  left: 1%;
 }
 .player::after {
   content: "";
@@ -716,7 +715,7 @@ body {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  right: -7%;
+  right: 2%;
 }
 
 .promises {

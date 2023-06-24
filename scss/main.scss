@@ -306,21 +306,24 @@ body {
       color: $primary_color;
    }
 }
-
+//------------------video----------//
 .video {
    margin: 0 100px;
-   padding: 30px 0;
-   padding-left: 2vw;
-   padding-right: 5vw;
-   border-radius: 32px;
-   border: 1px solid $color_grey;
+   // padding: 30px 0;
+   // padding-left: 2vw;
+   // padding-right: 5vw;
+   // border-radius: 32px;
+   // border: 1px solid $color_grey;
 }
 .player {
+   padding: 30px;
+   padding-right: 70px;
+   border-radius: 32px;
+   border: 1px solid $color_grey;
    position: relative;
    margin-bottom: 50px;
    &__label {
       position: absolute;
-
       max-width: 210px;
       left: 50%;
       top: 50%;
@@ -370,7 +373,7 @@ body {
       border-radius: 13px;
       top: 50%;
       transform: translateY(-50%);
-      left: -2%;
+      left: 1%;
    }
    &::after {
       content: "";
@@ -381,7 +384,7 @@ body {
       border: 1px solid $color_grey;
       top: 50%;
       transform: translateY(-50%);
-      right: -7%;
+      right: 2%;
    }
 }
 //---------------------promises----------------------//
