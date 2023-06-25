@@ -36,6 +36,13 @@ body {
       padding: 0 15px;
    }
 }
+
+.section {
+   margin-bottom: 100px;
+   &:nth-of-type(-n + 5) {
+      margin-bottom: 120px;
+   }
+}
 //-------------header-------------//
 
 .header {
@@ -112,6 +119,7 @@ body {
       &_fourth {
          font-size: 24px;
          line-height: 2;
+         margin-bottom: 15px;
          @media screen and (max-width: 992px) {
             margin-bottom: 10px;
          }
@@ -126,7 +134,6 @@ body {
       line-height: 1.4;
       color: $color_main;
       opacity: 0.8;
-
       &_first {
          max-width: 300px;
       }
@@ -141,6 +148,16 @@ body {
             width: 305px;
          }
       }
+      &_small {
+         font-size: 14px;
+         opacity: 0.6;
+         line-height: 1.7;
+         &_dark {
+            opacity: 1;
+            letter-spacing: 1.12px;
+            line-height: 1.7;
+         }
+      }
    }
 }
 .btn {
@@ -150,7 +167,6 @@ body {
       @media screen and (max-width: 992px) {
          font-size: 30px;
       }
-
       &::after {
          content: "";
          position: absolute;
@@ -174,12 +190,6 @@ body {
    }
 }
 
-.section {
-   margin-bottom: 120px;
-   &:last-of-type {
-      margin-bottom: 100px;
-   }
-}
 //----------------------------------info--------------------------//
 .info {
    @include flex(space-between, center);
@@ -306,7 +316,7 @@ body {
       color: $primary_color;
    }
 }
-//------------------video----------//
+//---------------------------------video------------------//
 .video {
    margin: 0 100px;
    // padding: 30px 0;
@@ -316,11 +326,11 @@ body {
    // border: 1px solid $color_grey;
 }
 .player {
+   position: relative;
    padding: 30px;
    padding-right: 70px;
    border-radius: 32px;
    border: 1px solid $color_grey;
-   position: relative;
    margin-bottom: 50px;
    &__label {
       position: absolute;
@@ -400,6 +410,7 @@ body {
    margin-left: -200px;
    background: $primary_color;
    opacity: 0.9;
+
    @media screen and (max-width: 1200px) {
       margin-left: calc(81vw - 600px - 770px);
       padding: 25px 10px 25px 5vw;
@@ -430,13 +441,21 @@ body {
          }
       }
    }
+   & .btn {
+      padding: 33px 96px 37px 89px;
+      border: 1px solid $color_grey;
+   }
 }
 //-------------------reviews---------------------------//
 .reviews {
-   position: relative;
    &__content {
       margin-bottom: 50px;
    }
+}
+.cards {
+   position: relative;
+   @include flex(space-between, flex-start, 1vw);
+   flex-wrap: wrap;
    &::after {
       content: "";
       position: absolute;
@@ -447,12 +466,9 @@ body {
       bottom: -100px;
    }
 }
-.cards {
-   @include flex(space-between, flex-start, 30px);
-}
 .card {
    @include flex(space-between, flex-start, 0, column);
-   width: 370px;
+   max-width: 370px;
    height: 340px;
    padding: 30px 40px;
    &:nth-child(1) {
@@ -483,4 +499,69 @@ body {
       letter-spacing: 1.6px;
       opacity: 0.8;
    }
+}
+//---------------------contact------------------//
+.contact {
+   @include flex(space-between, flex-start, 16vw);
+   padding-top: 60px;
+   &__content {
+      max-width: 470px;
+   }
+}
+
+.form {
+   @include flex(space-between, flex-start, 40px, column);
+   &__input {
+      max-width: 470px;
+      width: 33vw;
+      border: none;
+      border-bottom: 1px solid $color_grey;
+      padding-bottom: 12px;
+      &::-webkit-input-placeholder {
+         font-size: 18px;
+         font-family: Playfair Display;
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.44px;
+      }
+      &::-moz-placeholder {
+         font-size: 18px;
+         font-family: Playfair Display;
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.44px;
+      }
+      &:-ms-input-placeholder {
+         font-size: 18px;
+         font-family: Playfair Display;
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.44px;
+      }
+      &::-ms-input-placeholder {
+         font-size: 18px;
+         font-family: Playfair Display;
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.44px;
+      }
+      &::placeholder {
+         font-size: 18px;
+         font-family: Playfair Display;
+         font-style: italic;
+         line-height: 20px;
+         letter-spacing: 1.44px;
+      }
+   }
+}
+//------------foorer------------//
+.footer__content {
+   padding: 30px 0;
+   @include flex(space-between, center);
+}
+.made {
+   @include flex(space-between, center, 12px);
+}
+.agreement {
+   @include flex(space-between, center, 32px);
 }
