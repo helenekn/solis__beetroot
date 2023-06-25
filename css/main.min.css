@@ -940,6 +940,7 @@ body {
   border: none;
   border-bottom: 1px solid #e4e4e4;
   padding-bottom: 12px;
+  outline: none;
 }
 .form__input::-webkit-input-placeholder {
   font-size: 18px;

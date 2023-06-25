@@ -517,6 +517,7 @@ body {
       border: none;
       border-bottom: 1px solid $color_grey;
       padding-bottom: 12px;
+      outline: none;
       &::-webkit-input-placeholder {
          font-size: 18px;
          font-family: Playfair Display;
