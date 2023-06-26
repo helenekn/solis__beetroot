@@ -316,11 +316,6 @@ body {
 .info {
    @include flex(space-between, center);
    margin-top: -281px;
-   background: linear-gradient(
-      183.11deg,
-      rgba(255, 255, 255, 0) 46.73%,
-      #ffffff 63.21%
-   );
    @media screen and (max-width: 1200px) {
       margin-top: -100px;
    }

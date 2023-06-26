@@ -663,7 +663,6 @@ body {
       -ms-flex-direction: row;
           flex-direction: row;
   margin-top: -281px;
-  background: linear-gradient(183.11deg, rgba(255, 255, 255, 0) 46.73%, #ffffff 63.21%);
   overflow-x: hidden;
 }
 @media screen and (max-width: 1200px) {
