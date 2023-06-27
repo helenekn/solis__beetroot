@@ -907,6 +907,12 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+@media screen and (max-width: 768px) {
+  .player__label img {
+    width: 80px;
+    height: 80px;
+  }
+}
 .player__item {
   position: absolute;
   top: 0;
@@ -1124,23 +1130,17 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 340px;
-  width: 370px;
+  width: 30%;
   padding: 30px 2vw;
 }
 .card:nth-child(1) {
   background: url("../assets/img/rewiews-bcg1.png") center center/cover no-repeat;
-  -o-object-fit: cover;
-  background-size: 100% 100%;
 }
 .card:nth-child(2) {
   background: url("../assets/img/rewiews-bcg2.png") center center/cover no-repeat;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 .card:nth-child(3) {
   background: url("../assets/img/rewiews-bcg3.png") center center/cover no-repeat;
-  -o-object-fit: cover;
-  object-fit: cover;
 }
 .card__text {
   color: #ffffff;
@@ -1200,6 +1200,25 @@ body {
   max-width: 470px;
   width: 33vw;
 }
+@media screen and (max-width: 576px) {
+  .contact__content {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contact__content__form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1241,7 +1260,7 @@ body {
 }
 @media screen and (max-width: 576px) {
   .form__input {
-    font-size: 16px;
+    width: 80vw;
   }
 }
 .form__input::-webkit-input-placeholder {

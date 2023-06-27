@@ -1,0 +1,156 @@
+@import "normalize";
+@import "dark";
+@import "mixins";
+@import "extends";
+
+html,
+body {
+   min-height: 100vh;
+   font-family: $font_family;
+   font-weight: $font_weight;
+   font-size: $font_size;
+   color: $color_main;
+   background: $primary_color;
+}
+
+//-------------header-------------//
+
+.header {
+   background: linear-gradient(
+         269deg,
+         rgba(22, 25, 38, 0.5) 0%,
+         rgba(22, 25, 38, 0) 51.07%,
+         rgba(22, 25, 38, 0) 100%
+      ),
+      rgba(22, 25, 38, 0.02);
+   backdrop-filter: blur(4.5px);
+   -webkit-backdrop-filter: blur(4.5px);
+   backdrop-filter: blur(4.5px);
+}
+
+.menu {
+   @include flex(space-between, center, 2vw);
+   @media screen and (max-width: 768px) {
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 25vw;
+      flex-direction: column;
+      z-index: 2;
+      background: $color_italic;
+      display: none;
+      padding: 0 0;
+      gap: 0;
+      box-shadow: 1px 5px 11px 4px #384543;
+   }
+   &__item {
+      @media screen and (max-width: 768px) {
+         border: 0.5px solid $color_main;
+      }
+      &:hover::after {
+         background: $color_btn;
+      }
+   }
+}
+
+.burger-label span {
+   @media screen and (max-width: 768px) {
+      background: $color_main;
+   }
+}
+
+.link {
+   color: $color_main;
+}
+//------------first-screen----------//
+
+.first-screen {
+   background: url("../assets/img/bcg_night.png") center center/cover no-repeat;
+}
+
+.content {
+   &__title {
+      &_italic {
+         color: $color_italic;
+      }
+   }
+}
+.btn {
+   @extend %btn;
+   &__text {
+      &::after {
+         content: "";
+         background: $color_btn;
+      }
+      &:hover::after {
+         content: "";
+         position: absolute;
+         top: 46%;
+         left: 8%;
+         width: 100%;
+         height: 13px;
+         background: $color_focus;
+      }
+   }
+}
+
+//----------------------------------info--------------------------//
+.info-wrap {
+   background: $primary_color;
+}
+
+.list {
+   &__number {
+      color: $color_main;
+      &_grey {
+         color: $color_grey;
+      }
+   }
+
+   &__descr {
+      &:not(:last-of-type)::after {
+         content: "";
+         background: $color_italic;
+      }
+   }
+}
+//-----------------------benefits------------------------//
+
+//-----------------quote------------------------//
+.quote {
+   &__text {
+      &::before {
+         content: url("../assets/icons/quote-icon_night.png");
+      }
+   }
+}
+//---------------------------------video------------------//
+.video {
+   border: 1px solid $color_grey;
+}
+.player {
+   &::before {
+      content: "";
+      border: 1px solid $color_grey;
+   }
+   &::after {
+      content: "";
+      border: 1px solid $color_grey;
+   }
+}
+//---------------------promises----------------------//
+
+.promises-wrap {
+   background: $primary_color;
+}
+//-------------------reviews---------------------------//
+
+//---------------------contact------------------//
+
+.form {
+   &__input {
+      color: $color_main;
+      background-color: $primary_color;
+   }
+}
+//------------foorer------------//
