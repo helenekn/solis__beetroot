@@ -1,5 +1,5 @@
 @import "normalize";
-@import "dark";
+@import "vars_dark";
 @import "mixins";
 @import "extends";
 
@@ -62,8 +62,8 @@ body {
 .link {
    color: $color_main;
 }
-//------------first-screen----------//
 
+//------------first-screen----------//
 .first-screen {
    background: url("../assets/img/bcg_night.png") center center/cover no-repeat;
 }
