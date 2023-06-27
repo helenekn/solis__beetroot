@@ -840,13 +840,13 @@ body {
 }
 
 .quote {
-  padding: 100px 0;
+  padding: 100px 2vw;
   padding-left: 11vw;
   background: url("../assets/img/quote-background.png") center center/cover no-repeat;
 }
 @media screen and (max-width: 576px) {
   .quote {
-    padding: 20px 10px;
+    padding: 30px 15px;
   }
 }
 .quote__text {
@@ -860,14 +860,29 @@ body {
 }
 @media screen and (max-width: 576px) {
   .quote__text {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 .quote__text::before {
   content: url("../assets/icons/quote-icon.svg");
   position: absolute;
   left: -9%;
-  bottom: 55%;
+  top: -30%;
+}
+@media screen and (max-width: 768px) {
+  .quote__text::before {
+    height: 50px;
+    left: -10%;
+    top: -38px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .quote__text::before {
+    width: 60px;
+    height: 50px;
+    left: -6px;
+    top: -25px;
+  }
 }
 .quote__signature {
   font-size: 20px;
