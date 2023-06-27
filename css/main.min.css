@@ -423,7 +423,7 @@ body {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 28px;
+  top: 22px;
   opacity: 0.3;
 }
 
